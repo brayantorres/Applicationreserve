@@ -2,7 +2,6 @@
 package com.example.saaibi.parcial.Views;
 
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -10,19 +9,17 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TimePicker;
 
 
-import com.example.saaibi.parcial.Controller.EventController;
 import com.example.saaibi.parcial.R;
 import com.example.saaibi.parcial.Model.EventViewModel;
 import com.example.saaibi.parcial.databinding.EventActivityBinding;
@@ -39,7 +36,7 @@ import fr.ganfra.materialspinner.MaterialSpinner;
  * Created by SAAIBI on 13/9/2017.
  */
 
-public class EventActivity extends AppCompatActivity implements Observer,View.OnClickListener  {
+public class EventActivity extends AppCompatActivity implements Observer , View.OnClickListener  {
 
     private EventActivityBinding eventActivityBinding;
     private EventViewModel eventViewModel;
@@ -79,7 +76,16 @@ public class EventActivity extends AppCompatActivity implements Observer,View.On
         ArrayAdapter arrayadapter = new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, list);
         arrayadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spiTipeEvent.setAdapter(arrayadapter);
-
+        spiTipeEvent.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view,
+                                       int position, long id) {
+                eventViewModel.TipoBuscar(adapterView.getItemAtPosition(position).toString());
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
         setSupportActionBar(eventActivityBinding.toolbar);
         setupListEventView(eventActivityBinding.listEvent);
         setupObserver(eventViewModel);
@@ -156,7 +162,7 @@ public class EventActivity extends AppCompatActivity implements Observer,View.On
                 datePickerDialog.updateDate(año, mes, dia);
                 datePickerDialog.show();
 
-//                eventViewModel.fetchEventListFecha(campoDateEvent.getText().toString());
+             eventViewModel.fetchEventListFecha(campoDateEvent.getText().toString());
 
             }
 
