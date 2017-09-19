@@ -49,16 +49,19 @@ public class EventActivity extends AppCompatActivity implements Observer,View.On
     private EditText campoDateEvent, campoHourEvent;
     private LinearLayout area_dateEvent;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDataBinding();
+
 
         campoDateEvent = (EditText) findViewById(R.id.campo_dateEvent2);
 
         // Referencias TILs
         tilDateEvent = (TextInputLayout) findViewById(R.id.til_dateEvent);
         tilHourEvent = (TextInputLayout) findViewById(R.id.til_hourEvent);
+
 
         // Eventos Fecha y Hora
         campoDateEvent.setOnClickListener(this);
@@ -114,8 +117,12 @@ public class EventActivity extends AppCompatActivity implements Observer,View.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_sign_out) {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
+            Intent intent = new Intent();
+            intent.setClass(getApplicationContext(), LoginActivity.class);
+            intent.setAction(LoginActivity.class.getName());
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            getApplicationContext().startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -148,33 +155,9 @@ public class EventActivity extends AppCompatActivity implements Observer,View.On
                         , dia, mes, año);
                 datePickerDialog.updateDate(año, mes, dia);
                 datePickerDialog.show();
-            }
-            if (v == campoHourEvent || v == tilHourEvent) {
-                final Calendar c = Calendar.getInstance();
-                hora = c.get(Calendar.HOUR_OF_DAY);
-                minutos = c.get(Calendar.MINUTE);
-                AmPm = c.get(Calendar.AM_PM);
 
-                TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        hora = hourOfDay;
-                        minutos = minute;
+//                eventViewModel.fetchEventListFecha(campoDateEvent.getText().toString());
 
-                        String AM_PM;
-                        if (hourOfDay < 12) {
-                            AM_PM = "AM";
-
-                        } else {
-                            AM_PM = "PM";
-                            hora = hora - 12;
-                        }
-                        campoHourEvent.setText(hora + ":" + minutos + " " + AM_PM);
-
-                    }
-
-                }, hora, minutos, false);
-                timePickerDialog.show();
             }
 
     }

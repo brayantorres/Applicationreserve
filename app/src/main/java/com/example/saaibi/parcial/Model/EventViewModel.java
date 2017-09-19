@@ -29,6 +29,7 @@ public class EventViewModel extends Observable {
         this.eventList = new ArrayList<>();
         eventRecycler = new ObservableInt(View.GONE);
         eventRecycler.set(View.GONE);
+
     }
 
     public void onClickFabLoad(View view) {
@@ -39,9 +40,18 @@ public class EventViewModel extends Observable {
     public void fetchEventList() {
         eventRecycler.set(View.GONE);
         appController = new EventController(context);
+        eventList.clear();
         changeEventDataSet(appController.fillEvents());
         eventRecycler.set(View.VISIBLE);
     }
+    public void fetchEventListFecha(String fecha) {
+        eventRecycler.set(View.GONE);
+        appController = new EventController(context);
+        eventList.clear();
+        changeEventDataSet(appController.filtrarporFecha(fecha));
+        eventRecycler.set(View.VISIBLE);
+    }
+
 
     private void changeEventDataSet(List<Event> events) {
         if (!events.isEmpty())

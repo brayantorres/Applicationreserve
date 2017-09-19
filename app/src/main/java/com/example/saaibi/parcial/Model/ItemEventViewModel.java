@@ -33,7 +33,7 @@ public class ItemEventViewModel extends BaseObservable {
   }
 
   public String getHourEvent() {
-    return event.getHourEvent();
+    return event.getDateEvent();
   }
 
   public String getPictureProfile() {

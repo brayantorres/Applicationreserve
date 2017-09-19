@@ -84,7 +84,6 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(getApplicationContext(), "Tabla Events no eliminada", Toast.LENGTH_SHORT).show();
 
 
-
             }
         });
         //Manejador del Spinner
@@ -171,6 +170,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -180,8 +180,13 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_sign_out) {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
+            Intent intent = new Intent();
+            intent.setClass(getApplicationContext(), LoginActivity.class);
+            intent.setAction(LoginActivity.class.getName());
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            getApplicationContext().startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
