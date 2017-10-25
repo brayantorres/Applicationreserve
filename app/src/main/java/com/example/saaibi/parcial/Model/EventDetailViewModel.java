@@ -4,7 +4,6 @@ package com.example.saaibi.parcial.Model;
 
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
 import com.example.saaibi.parcial.Domain.Event;
 

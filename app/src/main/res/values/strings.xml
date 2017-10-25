@@ -31,4 +31,6 @@
     <string name="hint_type">Tipo:</string>
     <string name="txt_idEvent">Codigo:</string>
     <string name="action_sing_out">Sign out</string>
+    <string name="title_activity_maps">Map</string>
+
 </resources>

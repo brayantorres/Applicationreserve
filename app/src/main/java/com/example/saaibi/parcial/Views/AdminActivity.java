@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.example.saaibi.parcial.Controller.EventController;
 import com.example.saaibi.parcial.Controller.UserController;
 import com.example.saaibi.parcial.Domain.Event;
-import com.example.saaibi.parcial.Domain.User;
 import com.example.saaibi.parcial.R;
 
 import java.util.ArrayList;

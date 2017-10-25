@@ -33,7 +33,7 @@ public class CreateUsersOnClickListener implements View.OnClickListener {
 
         new AlertDialog.Builder(context)
                 .setView(formElementsView)
-                .setTitle("Registrase")
+                .setTitle("Sing up")
                 .setPositiveButton("siguiente",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {

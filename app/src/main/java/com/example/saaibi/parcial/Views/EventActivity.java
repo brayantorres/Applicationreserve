@@ -80,7 +80,7 @@ public class EventActivity extends AppCompatActivity implements Observer , View.
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view,
                                        int position, long id) {
-                eventViewModel.TipoBuscar(adapterView.getItemAtPosition(position).toString());
+                eventViewModel.fetchEventListType(adapterView.getItemAtPosition(position).toString());
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -162,7 +162,7 @@ public class EventActivity extends AppCompatActivity implements Observer , View.
                 datePickerDialog.updateDate(año, mes, dia);
                 datePickerDialog.show();
 
-             eventViewModel.fetchEventListFecha(campoDateEvent.getText().toString());
+             eventViewModel.fetchEventListDate(campoDateEvent.getText().toString());
 
             }
 

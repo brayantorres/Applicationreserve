@@ -44,14 +44,14 @@ public class EventViewModel extends Observable {
         changeEventDataSet(appController.fillEvents());
         eventRecycler.set(View.VISIBLE);
     }
-    public void fetchEventListFecha(String fecha) {
+    public void fetchEventListDate(String fecha) {
         eventRecycler.set(View.GONE);
         appController = new EventController(context);
         eventList.clear();
-        changeEventDataSet(appController.filtrarporFecha(fecha));
+        changeEventDataSet(appController.filtrarForDate(fecha));
         eventRecycler.set(View.VISIBLE);
     }
-    public void TipoBuscar(String tipo) {
+    public void fetchEventListType(String tipo) {
         eventRecycler.set(View.GONE);
         eventList.clear();
         appController = new EventController(context);

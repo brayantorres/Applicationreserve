@@ -70,55 +70,48 @@ public class EventController extends DBHelper {
         return contato;
     }
 
-    public List<Event> filtrarporFecha(String fecha) {
+    public List<Event> filtrarForDate(String fecha) {
         Cursor cursor = getAllEvents();
         cursor.moveToFirst();
-        Event userAux;
+        Event eventAux;
         while (!cursor.isAfterLast()) {
-            userAux = new Event(cursor);
-            String type = userAux.getDateEvent().toString();
-            if (fecha.equals(type)) {
-                listEvents.add(userAux);
+            eventAux = new Event(cursor);
+            String date = eventAux.getDateEvent().toString();
+            if (fecha.equals(date)) {
+                listEvents.add(eventAux);
             }
             cursor.moveToNext();
         }
         return listEvents;
     }
 
-    public boolean update(User user){
-
-        ContentValues values = new ContentValues();
-
-
-        String where = "username = ?";
-
-        String[] whereArgs = {user.getUserName()};
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        boolean isUpdate = db.update(DBContract.EventEntry.TABLE_NAME, values,
-                where, whereArgs) > 0;
-
-        db.close();
-
-        return isUpdate;
-
-    }
-
     public List<Event> filtrarporTipo(String tipo) {
         List<Event> listEventos = new ArrayList<>();
         Cursor cursor = getAllEvents();
         cursor.moveToFirst();
-        Event userAux;
+        Event eventAux;
         while (!cursor.isAfterLast()) {
-            userAux = new Event(cursor);
-            String type = userAux.getTipeEvent().toString();
+            eventAux = new Event(cursor);
+            String type = eventAux.getTipeEvent().toString();
             if (tipo.equals(type)) {
-                listEventos.add(userAux);
+                listEventos.add(eventAux);
             }
             cursor.moveToNext();
         }
         return listEventos;
+    }
+
+    public boolean update(User user){
+        ContentValues values = new ContentValues();
+        String where = "username = ?";
+        String[] whereArgs = {user.getUserName()};
+        SQLiteDatabase db = this.getWritableDatabase();
+        boolean isUpdate = db.update(DBContract.EventEntry.TABLE_NAME, values,
+                where, whereArgs) > 0;
+
+        db.close();
+        return isUpdate;
+
     }
 
     public boolean delete(int contatoID){
