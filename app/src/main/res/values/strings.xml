@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Parcial</string>
     <string name="action_settings">Admin</string>
+    <string name="action_notificatios">Notifications</string>
 
     <!-- App Titel . -->
     <string name="title_activity_user">Events Cool</string>
@@ -32,5 +33,6 @@
     <string name="txt_idEvent">Codigo:</string>
     <string name="action_sing_out">Sign out</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps2">Map</string>
 
 </resources>

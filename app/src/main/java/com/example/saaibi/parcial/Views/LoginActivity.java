@@ -77,6 +77,8 @@ public class LoginActivity extends AppCompatActivity {
             intent.setAction(MapsActivity.class.getName());
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             getApplicationContext().startActivity(intent);
+        }else {
+
         }
         return super.onOptionsItemSelected(item);
     }

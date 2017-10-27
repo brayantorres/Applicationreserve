@@ -80,10 +80,11 @@ public class EventActivity extends AppCompatActivity implements Observer , View.
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view,
                                        int position, long id) {
-                eventViewModel.fetchEventListType(adapterView.getItemAtPosition(position).toString());
+                //eventViewModel.fetchEventListType(adapterView.getItemAtPosition(position).toString());
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
         setSupportActionBar(eventActivityBinding.toolbar);
@@ -96,6 +97,7 @@ public class EventActivity extends AppCompatActivity implements Observer , View.
         eventActivityBinding = DataBindingUtil.setContentView(this, R.layout.event_activity);
         eventViewModel = new EventViewModel(this);
         eventActivityBinding.setMainViewModel(eventViewModel);
+
     }
 
     private void setupListEventView(RecyclerView listPeople) {

@@ -43,10 +43,14 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    //Google Services
+
+    //para fsm
+    //compile 'com.google.firebase:firebase-messaging:9.6.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
     compile 'com.github.ganfra:material-spinner:1.1.1'
     compile 'com.android.support:recyclerview-v7:26.+'
@@ -56,14 +60,11 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'io.reactivex.rxjava2:rxjava:2.1.1'
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
-
-    //Google Services
-    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.firebase:firebase-messaging:11.0.4'
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
     testCompile 'junit:junit:4.12'
-
-    //para fsm
-    //compile 'com.google.firebase:firebase-messaging:9.6.1'
 }
 //apply plugin: 'com.google.gms.google-services'
 
 
+apply plugin: 'com.google.gms.google-services'

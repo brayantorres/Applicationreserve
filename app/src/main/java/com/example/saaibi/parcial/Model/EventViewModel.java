@@ -30,6 +30,7 @@ public class EventViewModel extends Observable {
         eventRecycler = new ObservableInt(View.GONE);
         eventRecycler.set(View.GONE);
 
+
     }
 
     public void onClickFabLoad(View view) {
@@ -63,8 +64,7 @@ public class EventViewModel extends Observable {
     private void changeEventDataSet(List<Event> events) {
         if (!events.isEmpty())
             eventList.addAll(events);
-            System.out.println("lista: " + eventList);
-        System.out.println("listav: ");
+            System.out.println("lista 1: " + eventList);
         setChanged();
         notifyObservers();
     }
