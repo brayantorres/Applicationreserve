@@ -16,6 +16,7 @@ import com.example.saaibi.parcial.Controller.ApplicationController;
 import com.example.saaibi.parcial.Controller.UserController;
 import com.example.saaibi.parcial.Domain.User;
 import com.example.saaibi.parcial.MapsActivity;
+import com.example.saaibi.parcial.PushNotificationsActivity;
 import com.example.saaibi.parcial.R;
 import com.example.saaibi.parcial.Views.CreateUsersOnClickListener;
 
@@ -78,7 +79,12 @@ public class LoginActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             getApplicationContext().startActivity(intent);
         }else {
+            Intent intent = new Intent();
 
+            intent.setClass(getApplicationContext(), PushNotificationsActivity.class);
+            intent.setAction(PushNotificationsActivity.class.getName());
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+            getApplicationContext().startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

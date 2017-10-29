@@ -32,7 +32,9 @@
     <string name="hint_type">Tipo:</string>
     <string name="txt_idEvent">Codigo:</string>
     <string name="action_sing_out">Sign out</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="title_activity_maps2">Map</string>
+    <string name="title_activity_maps">Maps</string>
+    <string name="title_activity_maps2">Maps</string>
+
+    <string name="no_message_text">No ha recibido Notifications Push</string>
 
 </resources>
