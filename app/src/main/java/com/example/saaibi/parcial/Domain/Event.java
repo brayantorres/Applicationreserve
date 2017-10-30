@@ -17,18 +17,21 @@ public class Event implements Serializable {
 
     }
 
-    public   int _id;
-    public   String nameEvent;
-    public   String tipeEvent;
-    public   String attenEvent;
-    public   String cityEvent;
-    public   String dateEvent;
-    public   String hourEvent;
-    public   String requirementEvent;
-    public   String descriptionEvent;
+    public int _id;
+    public String nameEvent;
+    public String tipeEvent;
+    public String attenEvent;
+    public String cityEvent;
+    public String dateEvent;
+    public String hourEvent;
+    public String requirementEvent;
+    public String descriptionEvent;
+    public String latitude;
+    public String longitude;
 
 
-    public Event(String nameEvent, String tipeEvent, String attenEvent, String cityEvent, String dateEvent, String hourEvent, String requirementEvent, String descriptionEvent) {
+
+    public Event(String nameEvent, String tipeEvent, String attenEvent, String cityEvent, String dateEvent, String hourEvent, String requirementEvent, String descriptionEvent,String latitute,String longitude) {
 
         this.nameEvent = nameEvent;
         this.tipeEvent = tipeEvent;
@@ -38,12 +41,14 @@ public class Event implements Serializable {
         this.hourEvent = hourEvent;
         this.requirementEvent = requirementEvent;
         this.descriptionEvent = descriptionEvent;
+        this.latitude = latitute;
+        this.longitude = longitude;
 
     }
 
-    public Event (Cursor cursor) {
-        _id = cursor.getInt(cursor.getColumnIndex(DBContract.EventEntry._ID  ));
-        nameEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.NAME_EVENT  ));
+    public Event(Cursor cursor) {
+        _id = cursor.getInt(cursor.getColumnIndex(DBContract.EventEntry._ID));
+        nameEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.NAME_EVENT));
         tipeEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.TIPE_EVENT));
         attenEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.ATTEN_EVENT));
         cityEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.CITY_EVENT));
@@ -51,6 +56,8 @@ public class Event implements Serializable {
         hourEvent = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.EventEntry.HOUR_EVENT));
         requirementEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.REQUIREMENT_EVENT));
         descriptionEvent = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.DESCRIPTION_EVENT));
+        latitude = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.LATITUDE));
+        longitude = cursor.getString(cursor.getColumnIndex(DBContract.EventEntry.LONGITUDE));
     }
 
 
@@ -64,6 +71,8 @@ public class Event implements Serializable {
         values.put(DBContract.EventEntry.HOUR_EVENT, getHourEvent());
         values.put(DBContract.EventEntry.REQUIREMENT_EVENT, getRequirementEvent());
         values.put(DBContract.EventEntry.DESCRIPTION_EVENT, getDescriptionEvent());
+        values.put(DBContract.EventEntry.LATITUDE, getLatitude());
+        values.put(DBContract.EventEntry.LONGITUDE, getLongitude());
         return values;
     }
 
@@ -137,5 +146,20 @@ public class Event implements Serializable {
 
     public void setDescriptionEvent(String descriptionEvent) {
         this.descriptionEvent = descriptionEvent;
+    }
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }

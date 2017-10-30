@@ -1,6 +1,6 @@
 
 
-package com.example.saaibi.parcial.Views;
+package com.example.saaibi.parcial.Views.Adapter;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;

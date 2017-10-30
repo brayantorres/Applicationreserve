@@ -44,6 +44,8 @@ public class DBContract {
         public static final String HOUR_EVENT = "hourEvent";
         public static final String REQUIREMENT_EVENT = "requirementEvent";
         public static final String DESCRIPTION_EVENT = "descriptionEvent";
+        public static final String LATITUDE = "latitudeEvent";
+        public static final String LONGITUDE = "longitudeEvent";
 
         public static final String CREATE_TABLE = " CREATE TABLE IF NOT EXISTS "
                 + TABLE_NAME + " ("
@@ -55,6 +57,8 @@ public class DBContract {
                 + DATE_EVENT + " TEXT,"
                 + HOUR_EVENT + " TEXT,"
                 + REQUIREMENT_EVENT + " TEXT,"
+                + LATITUDE + " TEXT,"
+                + LONGITUDE + " TEXT,"
                 + DESCRIPTION_EVENT + " TEXT " + ")";
     }
 }

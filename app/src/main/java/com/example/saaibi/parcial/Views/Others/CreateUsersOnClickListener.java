@@ -1,4 +1,4 @@
-package com.example.saaibi.parcial.Views;
+package com.example.saaibi.parcial.Views.Others;
 
 import android.app.AlertDialog;
 import android.content.Context;

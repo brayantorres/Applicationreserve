@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 
 import com.example.saaibi.parcial.R;
 import com.example.saaibi.parcial.Model.EventViewModel;
+import com.example.saaibi.parcial.Views.Adapter.EventAdapter;
 import com.example.saaibi.parcial.databinding.EventActivityBinding;
 
 import java.util.ArrayList;
@@ -80,7 +81,10 @@ public class EventActivity extends AppCompatActivity implements Observer , View.
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view,
                                        int position, long id) {
-                //eventViewModel.fetchEventListType(adapterView.getItemAtPosition(position).toString());
+                if (position != -1){
+                    eventViewModel.fetchEventListType(adapterView.getItemAtPosition(position).toString());
+                }
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -128,7 +132,7 @@ public class EventActivity extends AppCompatActivity implements Observer , View.
             Intent intent = new Intent();
             intent.setClass(getApplicationContext(), LoginActivity.class);
             intent.setAction(LoginActivity.class.getName());
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
             getApplicationContext().startActivity(intent);
             finish();
             return true;

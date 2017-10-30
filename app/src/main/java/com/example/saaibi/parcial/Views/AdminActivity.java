@@ -18,9 +18,9 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.saaibi.parcial.Controller.EventController;
-import com.example.saaibi.parcial.Controller.UserController;
 import com.example.saaibi.parcial.Domain.Event;
 import com.example.saaibi.parcial.R;
+import com.example.saaibi.parcial.Views.Maps.EventsMapsActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,11 +30,13 @@ import fr.ganfra.materialspinner.MaterialSpinner;
 
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     private MaterialSpinner spiTipeEvent;
     private int dia, mes, año, hora, minutos, AmPm;
     private EditText campo_nameEvent, campo_attenEvent, campo_cityEvent, campo_dateEvent, campo_hourEvent, campo_requirementEvent, campo_descriptionEvent;
     private TextInputLayout tilDateEvent, tilHourEvent;
     private EditText campoDateEvent, campoHourEvent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,9 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), EventsMapsActivity.class);
+                startActivity(i);
+                 /* boolean isDeletedEvent = new EventController(getApplicationContext()).dropTable();
 
                 boolean isDeletedEvent = new EventController(getApplicationContext()).dropTable();
                 boolean isDeletedUser = new UserController(getApplicationContext()).dropTable();
@@ -77,11 +82,12 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(getApplicationContext(), "Tabla Users eliminada ", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(getApplicationContext(), "Tabla Users no eliminada", Toast.LENGTH_SHORT).show();
+
                 if (isDeletedEvent)
                     Toast.makeText(getApplicationContext(), "Tabla Events eliminada ", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(getApplicationContext(), "Tabla Events no eliminada", Toast.LENGTH_SHORT).show();
-
+ */
 
             }
         });
@@ -95,6 +101,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         list.add("Deportivo");
         list.add("Academico");
         list.add("Religioso");
+
 
         ArrayAdapter arrayadapter = new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, list);
         arrayadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -112,18 +119,25 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         String requisitos = campo_requirementEvent.getText().toString();
         String descripcion = campo_descriptionEvent.getText().toString();
 
-        Event evento = new Event(nombreEvento, tipEvento, encargado, lugar, fecha, hora, requisitos, descripcion);
-        boolean isCreate = new EventController(getApplicationContext()).create(evento);
-        if (isCreate)
-            Toast.makeText(getApplicationContext(), "Evento creado exitosamente", Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(getApplicationContext(), "No fue posible crear el Evento", Toast.LENGTH_SHORT).show();
+        Bundle parametros = this.getIntent().getExtras();
+        if (parametros != null) {
+            String   latitude = getIntent().getStringExtra("latitude");
+            String   longitude = getIntent().getStringExtra("longitude");
+
+            Event evento = new Event(nombreEvento, tipEvento, encargado, lugar, fecha, hora, requisitos, descripcion, latitude, longitude);
+            boolean isCreate = new EventController(getApplicationContext()).create(evento);
+            if (isCreate)
+                Toast.makeText(getApplicationContext(), "Evento creado exitosamente", Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(getApplicationContext(), "No fue posible crear el Evento", Toast.LENGTH_SHORT).show();
+        }
     }
 
     //Metodos de fechas y horas
     @Override
     public void onClick(View v) {
         if (v == campoDateEvent || v == tilDateEvent) {
+
             final Calendar c = Calendar.getInstance();
             dia = c.get(Calendar.DAY_OF_MONTH);
             mes = c.get(Calendar.MONTH);
@@ -182,8 +196,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent();
             intent.setClass(getApplicationContext(), LoginActivity.class);
             intent.setAction(LoginActivity.class.getName());
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             getApplicationContext().startActivity(intent);
             finish();
             return true;

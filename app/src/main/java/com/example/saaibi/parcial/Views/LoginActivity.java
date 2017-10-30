@@ -15,10 +15,9 @@ import android.widget.Toast;
 import com.example.saaibi.parcial.Controller.ApplicationController;
 import com.example.saaibi.parcial.Controller.UserController;
 import com.example.saaibi.parcial.Domain.User;
-import com.example.saaibi.parcial.MapsActivity;
-import com.example.saaibi.parcial.PushNotificationsActivity;
 import com.example.saaibi.parcial.R;
-import com.example.saaibi.parcial.Views.CreateUsersOnClickListener;
+import com.example.saaibi.parcial.Views.Maps.MapsActivity;
+import com.example.saaibi.parcial.Views.Others.CreateUsersOnClickListener;
 
 public class LoginActivity extends AppCompatActivity {
     private TextInputLayout tilNombre;
@@ -64,21 +63,23 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_action_settings) {
-            /*User person3 = new User("admin", "Admin", "Admin", "1234", "admin", 30);
+        /*   User person3 = new User("admin", "Admin", "Admin", "1234", "admin", 30);
             boolean usersCreate = new UserController(this).create(person3);
             if (usersCreate)
                 Toast.makeText(this, "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(this, "No fue posible crear Usuario", Toast.LENGTH_SHORT).show();
             return usersCreate;
-            */
+*/
             Intent intent = new Intent();
 
             intent.setClass(getApplicationContext(), MapsActivity.class);
             intent.setAction(MapsActivity.class.getName());
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             getApplicationContext().startActivity(intent);
-        }else {
+
+
+        } else {
             Intent intent = new Intent();
 
             intent.setClass(getApplicationContext(), PushNotificationsActivity.class);
@@ -86,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             getApplicationContext().startActivity(intent);
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
