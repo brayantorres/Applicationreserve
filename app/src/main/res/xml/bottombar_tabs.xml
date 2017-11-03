@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+
+    <tab
+        id="@+id/event"
+        title="@string/tab_event"
+        barColorWhenSelected="@color/colorPrimary"
+        icon="@mipmap/imencargado"
+        />
+
+    <tab
+        id="@+id/maps"
+        title="@string/tab_maps"
+        barColorWhenSelected="@color/colorPrimary"
+        icon="@mipmap/lugar"
+        />
+
+    <tab
+        id="@+id/notifications"
+        title="@string/tab_notifications"
+        barColorWhenSelected="@color/colorPrimary"
+        icon="@mipmap/camp_nombre"
+        />
+</tabs>

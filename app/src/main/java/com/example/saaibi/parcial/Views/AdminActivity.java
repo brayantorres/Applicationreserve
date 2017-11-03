@@ -136,9 +136,8 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
     //Metodos de fechas y horas
     @Override
     public void onClick(View v) {
+        final Calendar c = Calendar.getInstance();
         if (v == campoDateEvent || v == tilDateEvent) {
-
-            final Calendar c = Calendar.getInstance();
             dia = c.get(Calendar.DAY_OF_MONTH);
             mes = c.get(Calendar.MONTH);
             año = c.get(Calendar.YEAR);
@@ -154,7 +153,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             datePickerDialog.show();
         }
         if (v == campoHourEvent || v == tilHourEvent) {
-            final Calendar c = Calendar.getInstance();
+
             hora = c.get(Calendar.HOUR_OF_DAY);
             minutos = c.get(Calendar.MINUTE);
             AmPm = c.get(Calendar.AM_PM);
@@ -174,9 +173,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                         hora = hora - 12;
                     }
                     campoHourEvent.setText(hora + ":" + minutos + " " + AM_PM);
-
                 }
-
             }, hora, minutos, false);
             timePickerDialog.show();
         }

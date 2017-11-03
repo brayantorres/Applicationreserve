@@ -43,11 +43,10 @@
             android:name=".Views.EventActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
-
         </activity>
         <activity
             android:name=".Views.EventDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Views.Maps.MapsActivity"
             android:label="@string/title_activity_maps">
@@ -57,8 +56,7 @@
             android:name=".Views.Maps.EventsMapsActivity"
             android:label="@string/title_activity_events_maps" />
 
-        <activity android:name=".Views.PushNotificationsActivity"></activity>
-
+        <activity android:name=".Views.PushNotificationsActivity" />
 
         <service
             android:name=".Firebase.FCMInstanceIdService"
@@ -77,6 +75,11 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".Views.ContainerActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
     </application>
 
 </manifest>

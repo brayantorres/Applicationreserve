@@ -18,7 +18,6 @@ import android.widget.Toast;
 import com.example.saaibi.parcial.Domain.Event;
 import com.example.saaibi.parcial.R;
 import com.example.saaibi.parcial.Model.EventDetailViewModel;
-import com.example.saaibi.parcial.Views.Maps.EventsMapsActivity;
 import com.example.saaibi.parcial.databinding.EventDetailActivityBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;

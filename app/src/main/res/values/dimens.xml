@@ -24,4 +24,6 @@
     <dimen name="letter_large">18sp</dimen>
 
     <dimen name="size_txt">20sp</dimen>
+
+    <dimen name="bottombar_height">70dp</dimen>
 </resources>

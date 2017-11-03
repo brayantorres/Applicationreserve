@@ -12,6 +12,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -119,11 +121,15 @@ public class EventsMapsActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         CharSequence title = item.getTitle();
-
         if (title != null && title.equals("Siguiente")) {
-            Intent i = new Intent(this, AdminActivity.class);
-            i.putExtras(parmetros);
-            startActivity(i);
+            if (parmetros != null) {
+                Intent i = new Intent(this, AdminActivity.class);
+                i.putExtras(parmetros);
+                startActivity(i);
+            }else{
+                Toast.makeText(this, "Selecione un ubicacion", Toast.LENGTH_LONG).show();
+            }
+
         }
         return super.onOptionsItemSelected(item);
     }

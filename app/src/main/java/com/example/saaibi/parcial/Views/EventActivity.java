@@ -111,7 +111,7 @@ public class EventActivity extends AppCompatActivity implements Observer , View.
     }
 
     public void setupObserver(Observable observable) {
-        observable.addObserver(this);
+       observable.addObserver(this);
     }
 
     @Override
