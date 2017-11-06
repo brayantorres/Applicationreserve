@@ -9,7 +9,7 @@
 
         <variable
             name="mainViewModel"
-            type="com.example.saaibi.parcial.Model.EventViewModel" />
+            type="com.example.brayan.parcial.Model.EventViewModel" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout

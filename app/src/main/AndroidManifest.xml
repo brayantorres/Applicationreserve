@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.saaibi.parcial">
+    package="com.example.brayan.parcial">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".Controller.ApplicationController"
+        android:name="com.example.brayan.parcial.Controller.ApplicationController"
         android:allowBackup="true"
         android:icon="@mipmap/copagrande"
         android:label="@string/title_activity_admin"
@@ -24,7 +24,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Views.LoginActivity"
+            android:name="com.example.brayan.parcial.Views.LoginActivity"
             android:label="@string/title_activity_admin"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -34,32 +34,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Views.AdminActivity"
+            android:name="com.example.brayan.parcial.Views.AdminActivity"
             android:label="@string/title_activity_admin"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity
-            android:name=".Views.EventActivity"
+            android:name="com.example.brayan.parcial.Views.EventActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity
-            android:name=".Views.EventDetailActivity"
+            android:name="com.example.brayan.parcial.Views.EventDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Views.Maps.MapsActivity"
+            android:name="com.example.brayan.parcial.Views.Maps.MapsActivity"
             android:label="@string/title_activity_maps">
 
         </activity>
         <activity
-            android:name=".Views.Maps.EventsMapsActivity"
+            android:name="com.example.brayan.parcial.Views.Maps.EventsMapsActivity"
             android:label="@string/title_activity_events_maps" />
 
-        <activity android:name=".Views.PushNotificationsActivity" />
+        <activity android:name="com.example.brayan.parcial.Views.PushNotificationsActivity" />
 
         <service
-            android:name=".Firebase.FCMInstanceIdService"
+            android:name="com.example.brayan.parcial.Firebase.FCMInstanceIdService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -67,7 +67,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".Firebase.FCMService"
+            android:name="com.example.brayan.parcial.Firebase.FCMService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -75,7 +75,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".Views.ContainerActivity"
+        <activity android:name="com.example.brayan.parcial.Views.ContainerActivity"
                   android:theme="@style/AppTheme.NoActionBar">
 
 

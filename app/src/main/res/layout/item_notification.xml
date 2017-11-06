@@ -26,7 +26,7 @@
             android:layout_centerVertical="true"
             android:text="New Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            tools:text="40%" />
+            tools:text="15 min" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -37,7 +37,7 @@
             android:layout_toRightOf="@+id/tv_discount"
             android:text="New Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            tools:text="Curson Android en Coursera" />
+            tools:text="Notificacion de corte" />
 
         <TextView
             android:id="@+id/tv_description"
@@ -47,7 +47,7 @@
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@+id/tv_discount"
             android:text="New Text"
-            tools:text="Curso basico para desarollar aplicaciones móviles nativas para los smartphones con sistema operativo Android" />
+            tools:text="quedan 15 minutos para su corte" />
 
         <Button
             android:id="@+id/button"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_description"
             android:layout_toRightOf="@+id/tv_discount"
-            android:text="REDIMIR"
+            android:text="Visto"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textColor="?attr/colorPrimary"
             android:textSize="13sp" />

@@ -7,7 +7,7 @@
 
         <variable
             name="eventDetailViewModel"
-            type="com.example.saaibi.parcial.Model.EventDetailViewModel" />
+            type="com.example.brayan.parcial.Model.EventDetailViewModel" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -215,7 +215,7 @@
                                 android:id="@+id/image_requirementEvent"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@mipmap/imencargado" />
+                                android:src="@mipmap/requisitos" />
 
                             <TextView
                                 android:layout_width="wrap_content"

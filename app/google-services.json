@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "484152055618",
+    "firebase_url": "https://appreservas-6577c.firebaseio.com",
+    "project_id": "appreservas-6577c",
+    "storage_bucket": "appreservas-6577c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484152055618:android:f06c868308a49ac4",
+        "android_client_info": {
+          "package_name": "com.example.brayan.parcial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484152055618-nrkrqp0u6svnqkmehu3d97vund87kdvd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brayan.parcial",
+            "certificate_hash": "92af19574464c212eae596c5f29ccb244ede71d3"
+          }
+        },
+        {
+          "client_id": "484152055618-6ik90jmj6eslp5ab0osnfeunf1mm9rsm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAiAEZ3mS8_nVvn1UgTsBZX65t6WvuJas"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484152055618-6ik90jmj6eslp5ab0osnfeunf1mm9rsm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,29 +1,29 @@
 <resources>
-    <string name="app_name">Parcial</string>
+    <string name="app_name">AppReservas</string>
     <string name="action_settings">Admin</string>
     <string name="action_notificatios">Notifications</string>
 
     <!-- App Titel . -->
-    <string name="title_activity_user">Events Cool</string>
-    <string name="title_activity_admin">Events Cool</string>
+    <string name="title_activity_user">Register</string>
+    <string name="title_activity_admin">App Reserve</string>
 
     <!-- Create User . -->
     <string name="hint_usersName">UserName</string>
     <string name="hint_name">Name</string>
-    <string name="hint_lastName">Lats Name</string>
+    <string name="hint_lastName">Last Name</string>
     <string name="hint_age">Age</string>
     <string name="hint_nombre">Nombre</string>
     <string name="hint_password">Password</string>
 
     <!-- Create Event  . -->
-    <string name="hint_nameEvent">Nombre Evento</string>
-    <string name="hint_attenEvent">Encargado del Evento</string>
+    <string name="hint_nameEvent">Peluqueria Name</string>
+    <string name="hint_attenEvent">Peluquer@</string>
     <string name="hint_cityEvent">Regíon/Ciudad</string>
     <string name="hint_dateEvent">Seleccione Fecha</string>
     <string name="hint_hourEvent">Seleccione Hora</string>
-    <string name="hint_requirementEvent">Requisitos</string>
+    <string name="hint_requirementEvent">Precio Corte</string>
     <string name="hint_descriptionEvent">Descripción</string>
-    <string name="txt_event">Lista Eventos</string>
+    <string name="txt_event">Lista Tipos de Corte</string>
 
 
     <!-- Prueba . -->
@@ -33,12 +33,12 @@
     <string name="txt_idEvent">Codigo:</string>
     <string name="action_sing_out">Sign out</string>
 
-    <string name="title_activity_maps2">Maps</string>
+    <string name="title_activity_maps2">Peluqueria Maps </string>
 
     <string name="no_message_text">No ha recibido Notifications Push</string>
 
     <!-- Maps . -->
-    <string name="title_activity_events_maps">Ubicacion del Evento</string>
+    <string name="title_activity_events_maps">Ubicacion Peluqueria</string>
     <string name="title_activity_maps">Maps</string>
     <string name="title_type_map">Tipo de mapa</string>
     <string name="latitude">Latitude:</string>
